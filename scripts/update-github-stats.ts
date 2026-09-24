@@ -62,22 +62,35 @@ const ghHeaders = {
   ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
 }
 
-/** Contributor count via the Link-header pagination trick (per_page=1 → last page = count). */
+/** Product release info for career-ops. The repo is a monorepo that publishes TWO release
+ *  series — `career-ops-v*` (the product) and `web-v*` (the landing package) — plus the
+ *  pre-monorepo plain `v*` tags (v1.2–v1.6). Taking arr[0] unfiltered published the web
+ *  package as the product's latest ("v0.9.0" on 31-ago, "v0.11.0" on 16-sep, when the
+ *  product was at v1.31/v1.33). Only product tags count; drafts and prereleases never do. */
 async function fetchReleaseInfo(owner: string, repo: string): Promise<{ count: number; latestTag: string; latestDate: Date } | null> {
   try {
-    const res = await fetch(
-      `https://api.github.com/repos/${owner}/${repo}/releases?per_page=100`,
-      { headers: ghHeaders },
-    )
-    if (!res.ok) return null
-    const arr = await res.json()
-    if (!Array.isArray(arr) || arr.length === 0) return null
-    return { count: arr.length, latestTag: arr[0].tag_name, latestDate: new Date(arr[0].published_at) }
+    const all: Array<{ tag_name: string; published_at: string; draft: boolean; prerelease: boolean }> = []
+    for (let page = 1; page <= 10; page++) {
+      const res = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/releases?per_page=100&page=${page}`,
+        { headers: ghHeaders },
+      )
+      if (!res.ok) return null
+      const arr = await res.json()
+      if (!Array.isArray(arr)) return null
+      all.push(...arr)
+      if (arr.length < 100) break
+    }
+    const product = all.filter(r => !r.draft && !r.prerelease && /^(career-ops-)?v\d/.test(r.tag_name))
+    if (product.length === 0) return null
+    product.sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at))
+    return { count: product.length, latestTag: product[0].tag_name, latestDate: new Date(product[0].published_at) }
   } catch {
     return null
   }
 }
 
+/** Contributor count via the Link-header pagination trick (per_page=1 → last page = count). */
 async function fetchContributorCount(owner: string, repo: string): Promise<number | null> {
   try {
     const res = await fetch(
@@ -454,7 +467,8 @@ async function main() {
 
       // Releases row: count + latest tag + date, live from the API so it never fossilizes
       // (fila corregida a mano el 21-jul tras quedar fósil: 21/v1.18.0 junto a contadores frescos)
-      const releases = await fetchReleaseInfo('santifer', 'career-ops')
+      const releases = await fetchReleaseInfo('career-ops-hq', 'career-ops')
+      if (!releases) console.warn('  ⚠ releases row: fetch failed or no product tags — row left unchanged')
       if (releases) {
         const ver = releases.latestTag.replace(/^.*?v(?=\d)/, 'v')
         const relMonthsEs = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
