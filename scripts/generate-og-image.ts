@@ -62,7 +62,7 @@ function readState(): { starsK?: string } {
 async function main() {
   console.log('🖼  Generating OG image...\n')
 
-  const stars = await fetchStars('santifer', 'career-ops')
+  const stars = await fetchStars('career-ops-hq', 'career-ops')
   if (stars == null) {
     console.log('  ⏭ Could not read stars — leaving existing og-image.webp untouched')
     return

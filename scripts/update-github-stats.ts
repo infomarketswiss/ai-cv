@@ -286,7 +286,7 @@ async function main() {
   }
 
   // 4. Update career-ops star count in SEO meta descriptions (i18n.ts + index.html)
-  const careerOpsStats = await fetchGitHubStats('santifer', 'career-ops')
+  const careerOpsStats = await fetchGitHubStats('career-ops-hq', 'career-ops')
   if (careerOpsStats) {
     const starLabel = formatCount(careerOpsStats.stars) + '+'
 
@@ -449,7 +449,11 @@ async function main() {
       fleet = fleet.replace(/(\['Forks', ')([\d.,]+)(')/g, (_m, a: string, num: string, c: string) =>
         `${a}${num.includes('.') ? esInt(forks) : enInt(forks)}${c}`)
 
-      const contributors = await fetchContributorCount('santifer', 'career-ops')
+      // Repo transferido a career-ops-hq: /repos sigue la redirección, pero /search/issues
+      // NO (422 con el nombre viejo). Un null silencioso congeló las PRs fusionadas en 1.330
+      // de jul a oct-2026, así que cada fetch fallido avisa en el log del build.
+      const contributors = await fetchContributorCount('career-ops-hq', 'career-ops')
+      if (!contributors) console.warn('  ⚠ contributors: fetch failed — counts left unchanged')
       if (contributors) {
         fleet = fleet.replace(/\b\d{3,} contributors\b/g, `${contributors} contributors`)
         fleet = fleet.replace(/\b\d{3,} contribuidores\b/g, `${contributors} contribuidores`)
@@ -457,7 +461,8 @@ async function main() {
         fleet = fleet.replace(/(\['Contribuidores', ')\d+(')/g, `$1${contributors}$2`)
       }
 
-      const mergedPrs = await fetchMergedPrCount('santifer', 'career-ops')
+      const mergedPrs = await fetchMergedPrCount('career-ops-hq', 'career-ops')
+      if (!mergedPrs) console.warn('  ⚠ merged PRs: fetch failed — counts left unchanged')
       if (mergedPrs) {
         fleet = fleet.replace(/\b[\d,]{3,} merged PRs\b/g, `${enInt(mergedPrs)} merged PRs`)
         fleet = fleet.replace(/\b[\d.]{3,} PRs fusionadas\b/g, `${esInt(mergedPrs)} PRs fusionadas`)
@@ -493,6 +498,22 @@ async function main() {
         console.log(`  ✓ ai-agent-fleet: stars ${enInt(stars)}, forks ${enInt(forks)}${contributors ? `, ${contributors} contributors` : ''}${mergedPrs ? `, ${enInt(mergedPrs)} merged PRs` : ''}`)
       } else {
         console.log('  ⏭ ai-agent-fleet: no changes')
+      }
+
+      // Story page: contributors as a rounded floor ("460+" / "más de 460"), the same
+      // live count as the fleet article. Before this sweep it said 180+ while /ai-agent-fleet said 463.
+      if (contributors) {
+        const STORY_I18N = resolve(__dirname, '../src/story-i18n.ts')
+        const story = readFileSync(STORY_I18N, 'utf-8')
+        const floor = Math.floor(contributors / 10) * 10
+        const nextStory = story
+          .replace(/\b\d{2,}\+ contributors\b/g, `${floor}+ contributors`)
+          .replace(/\bmás de \d{2,} contribuidores\b/g, `más de ${floor} contribuidores`)
+        if (nextStory !== story) {
+          writeFileSync(STORY_I18N, nextStory, 'utf-8')
+          anyChanged = true
+          console.log(`  ✓ story: ${floor}+ contributors`)
+        }
       }
     }
   }

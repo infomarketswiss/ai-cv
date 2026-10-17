@@ -3,13 +3,13 @@ export const seo = {
     title:
       'santifer | Creator of career-ops · AI job search agent',
     description:
-      'Construyo agentes de IA que hacen el trabajo. Creador de career-ops (73.1K+ ⭐), agente open source para buscar empleo. Gratis para los candidatos, para siempre.',
+      'Construyo agentes de IA que hacen el trabajo. Creador de career-ops (75.3K+ ⭐), agente open source para buscar empleo. Gratis para los candidatos, para siempre.',
   },
   en: {
     title:
       'santifer | Creator of career-ops · AI job search agent',
     description:
-      'I build AI agents that do the work. Creator of career-ops (73.1K+ ⭐), the open-source AI job search agent. Free for candidates, forever. Your call. Always.',
+      'I build AI agents that do the work. Creator of career-ops (75.3K+ ⭐), the open-source AI job search agent. Free for candidates, forever. Your call. Always.',
   },
 };
 
@@ -190,8 +190,8 @@ export const translations = {
           link: 'career-ops.org',
           linkLabel: 'career-ops, el agente open-source de búsqueda de empleo con IA',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '73.1K',
-          forks: '13.7K',
+          stars: '75.3K',
+          forks: '14.0K',
           caseStudyUrl: '/career-ops',
           caseStudyLabel: 'Leer: AI Job Search multi-agente',
         },
@@ -203,7 +203,7 @@ export const translations = {
           tech: ['Next.js 16', 'React 19', 'Tailwind v4', 'GitHub GraphQL', 'GitHub Actions', 'Web Audio', 'Polar', 'Vercel'],
           link: 'warpchart.dev',
           linkUrl: 'https://warpchart.dev?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '16',
+          stars: '18',
         },
         {
           title: 'santifer.io',
@@ -212,8 +212,8 @@ export const translations = {
           desc: 'CV interactivo con SDLC aumentado con IA. Construido con **Claudeable**, monitorizado con **Claude Pulse**, animaciones debuggeadas con **Claude Eye**. Prerender SSR, i18n bilingüe y SEO automatizado.',
           tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
           link: 'github.com/santifer/cv-santiago',
-          stars: '848',
-          forks: '282',
+          stars: '858',
+          forks: '279',
         },
         {
           title: 'Self-Healing Chatbot',
@@ -412,8 +412,8 @@ export const translations = {
           title: 'Agente AI Omnicanal "Jacobo"',
           badge: '~90% autoservicio',
           github: 'santifer/jacobo-workflows',
-          stars: '166',
-          forks: '50',
+          stars: '170',
+          forks: '51',
           desc: 'Voz (ElevenLabs) + WhatsApp (n8n / WATI) + Aircall cloud PBX. Orquestación de sub-agentes especializados vía tool calling.',
           items: [
             {
@@ -444,8 +444,8 @@ export const translations = {
           title: 'Web Programática + SEO Automatizado',
           badge: 'Única en el sector en España',
           github: 'santifer/santifer-irepair',
-          stars: '37',
-          forks: '16',
+          stars: '40',
+          forks: '17',
           desc: '100% custom-made (2024). Headless CMS en Airtable como fuente de verdad, integrado con ERP, generando web en Astro con SEO programático.',
           items: [
             {
@@ -570,14 +570,14 @@ export const translations = {
       quoteHandle: '@garrytan',
       quoteText: 'Golden age of open source is here',
       quoteReplies: '106',
-      quoteRetweets: '522',
+      quoteRetweets: '520',
       quoteLikes: '6.6K',
       quoteViews: '1.7M',
       quoteUrl: 'https://x.com/garrytan/status/2040891664617848993',
       replies: '107',
       retweets: '498',
       likes: '3.9K',
-      views: '559.9K',
+      views: '561.1K',
       cta: 'Ver en X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },
@@ -1048,8 +1048,8 @@ export const translations = {
           link: 'career-ops.org',
           linkLabel: 'career-ops, the open-source AI job search agent',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '73.1K',
-          forks: '13.7K',
+          stars: '75.3K',
+          forks: '14.0K',
           caseStudyUrl: '/career-ops-system',
           caseStudyLabel: 'Case Study: AI Job Search',
         },
@@ -1061,7 +1061,7 @@ export const translations = {
           tech: ['Next.js 16', 'React 19', 'Tailwind v4', 'GitHub GraphQL', 'GitHub Actions', 'Web Audio', 'Polar', 'Vercel'],
           link: 'warpchart.dev',
           linkUrl: 'https://warpchart.dev?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '16',
+          stars: '18',
         },
         {
           title: 'santifer.io',
@@ -1070,8 +1070,8 @@ export const translations = {
           desc: 'Interactive CV with AI-augmented SDLC. Built with **Claudeable**, monitored with **Claude Pulse**, animations debugged with **Claude Eye**. SSR prerender, bilingual i18n, and automated SEO.',
           tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
           link: 'github.com/santifer/cv-santiago',
-          stars: '848',
-          forks: '282',
+          stars: '858',
+          forks: '279',
         },
         {
           title: 'Self-Healing Chatbot',
@@ -1266,8 +1266,8 @@ export const translations = {
           title: 'Omnichannel AI Agent "Jacobo"',
           badge: '~90% self-service',
           github: 'santifer/jacobo-workflows',
-          stars: '166',
-          forks: '50',
+          stars: '170',
+          forks: '51',
           desc: 'Voice (ElevenLabs) + WhatsApp (n8n / WATI) + Aircall cloud PBX. Sub-agent orchestration via tool calling.',
           items: [
             {
@@ -1298,8 +1298,8 @@ export const translations = {
           title: 'Programmatic Web + Automated SEO',
           badge: 'Only one in sector in Spain',
           github: 'santifer/santifer-irepair',
-          stars: '37',
-          forks: '16',
+          stars: '40',
+          forks: '17',
           desc: '100% custom-made (2024). Headless CMS in Airtable as source of truth, integrated with ERP, generating Astro website with programmatic SEO.',
           items: [
             {
@@ -1424,14 +1424,14 @@ export const translations = {
       quoteHandle: '@garrytan',
       quoteText: 'Golden age of open source is here',
       quoteReplies: '106',
-      quoteRetweets: '522',
+      quoteRetweets: '520',
       quoteLikes: '6.6K',
       quoteViews: '1.7M',
       quoteUrl: 'https://x.com/garrytan/status/2040891664617848993',
       replies: '107',
       retweets: '498',
       likes: '3.9K',
-      views: '559.9K',
+      views: '561.1K',
       cta: 'View on X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },

@@ -6,7 +6,7 @@ export const aiAgentFleetContent = {
     altSlug: 'ai-agent-fleet',
     readingTime: '14 min de lectura',
     seo: {
-      title: 'Agentic maintenance: un repo de 73.000 estrellas con agentes IA',
+      title: 'Agentic maintenance: un repo de 75.000 estrellas con agentes IA',
       description: 'Una flota de agentes Claude Code mantiene career-ops: triage, tests, review briefs y releases. El sistema, un día documentado y cómo replicarlo.',
     },
     nav: {
@@ -15,11 +15,11 @@ export const aiAgentFleetContent = {
     },
     header: {
       kicker: 'Cómo se opera · Open Source',
-      h1: 'Agentic maintenance: cómo dirijo un repo open source de 73.000 estrellas con una flota de agentes IA',
+      h1: 'Agentic maintenance: cómo dirijo un repo open source de 75.000 estrellas con una flota de agentes IA',
       subtitle: 'Los agentes hacen el trabajo mecánico: triage, tests, review briefs, releases. Las decisiones son mías. Esto es el sistema, un día completo documentado, y lo que hace falta para montarlo en tu propio repo.',
       date: '10 jul 2026',
     },
-    tldr: 'career-ops es mi sistema open source de búsqueda de empleo: 73.063 estrellas en GitHub, 453 contribuidores y 1.330 PRs fusionadas a fecha de hoy. Durante seis meses lo mantuve por las tardes y los fines de semana, alrededor de un trabajo a jornada completa. Desde septiembre me dedico a él a tiempo completo. Una flota de agentes Claude Code hace el trabajo mecánico — triage, testing, review briefs, mecánica de releases, métricas de comunidad. Gates duros los mantienen honestos, y cada fallo real se destila en una regla que cargan al arrancar.',
+    tldr: 'career-ops es mi sistema open source de búsqueda de empleo: 75.297 estrellas en GitHub, 463 contribuidores y 2.406 PRs fusionadas a fecha de hoy. Durante seis meses lo mantuve por las tardes y los fines de semana, alrededor de un trabajo a jornada completa. Desde septiembre me dedico a él a tiempo completo. Una flota de agentes Claude Code hace el trabajo mecánico — triage, testing, review briefs, mecánica de releases, métricas de comunidad. Gates duros los mantienen honestos, y cada fallo real se destila en una regla que cargan al arrancar.',
     tldrCoin: {
       pre: ' ',
       term: 'Agentic maintenance',
@@ -43,7 +43,7 @@ export const aiAgentFleetContent = {
       },
       fleet: {
         heading: 'La flota',
-        intro: 'Cada agente es una sesión persistente de Claude Code en su propia ventana de tmux, con su propia memoria. Se coordinan mediante IPC basado en ficheros: JSON de request/response en un directorio compartido, con polling. La capa de coordinación son ficheros: una máquina de estados desacoplada donde cada mensaje es un artefacto legible y cada decisión deja una traza reproducible. Escala a un repo de 73.000 estrellas y se sigue debuggeando con cat.',
+        intro: 'Cada agente es una sesión persistente de Claude Code en su propia ventana de tmux, con su propia memoria. Se coordinan mediante IPC basado en ficheros: JSON de request/response en un directorio compartido, con polling. La capa de coordinación son ficheros: una máquina de estados desacoplada donde cada mensaje es un artefacto legible y cada decisión deja una traza reproducible. Escala a un repo de 75.000 estrellas y se sigue debuggeando con cat.',
         table: {
           headers: ['Agente', 'Qué hace'],
           rows: [
@@ -142,15 +142,15 @@ export const aiAgentFleetContent = {
           caption: 'La telemetría en vivo de career-ops — por',
           linkLabel: 'Warpchart',
         },
-        asOf: 'A 29 de septiembre de 2026:',
+        asOf: 'A 17 de octubre de 2026:',
         table: {
           headers: ['Métrica', 'Valor'],
           rows: [
-            ['Estrellas en GitHub', '73.063'],
-            ['Forks', '13.727'],
-            ['Contribuidores', '453'],
-            ['PRs fusionadas', '1.330'],
-            ['Releases desde el despegue de abril', '34 (última: v1.34.0, 24 de septiembre)'],
+            ['Estrellas en GitHub', '75.297'],
+            ['Forks', '14.048'],
+            ['Contribuidores', '463'],
+            ['PRs fusionadas', '2.406'],
+            ['Releases desde el despegue de abril', '37 (última: v1.37.0, 16 de octubre)'],
             ['Suite de tests', '5.624 aserciones, 0 fallando (ago 2026)'],
             ['Miembros de Discord', '4.900'],
             ['Tráfico semanal', '26.831 visitantes únicos · 8.680 cloners únicos — 32% view→clone (jul 2026)'],
@@ -162,7 +162,7 @@ export const aiAgentFleetContent = {
         dora: {
           pre: 'El ',
           linkLabel: 'State of AI-assisted Software Development 2025 de DORA',
-          post: ' midió lo que la mayoría de los equipos de ingeniería ya siente: la IA dispara el output individual (un 98% más de PRs fusionadas) mientras las métricas de delivery organizacional se quedan planas. Su hallazgo principal es que la IA amplifica el sistema en el que aterriza. El hueco entre esos dos números vive en todo lo que describe este artículo: review, confianza, memoria, gates. Este repo es ese hueco cerrado en público, a escala de 73.000 estrellas, y durante sus primeros seis meses, por las tardes y los fines de semana.',
+          post: ' midió lo que la mayoría de los equipos de ingeniería ya siente: la IA dispara el output individual (un 98% más de PRs fusionadas) mientras las métricas de delivery organizacional se quedan planas. Su hallazgo principal es que la IA amplifica el sistema en el que aterriza. El hueco entre esos dos números vive en todo lo que describe este artículo: review, confianza, memoria, gates. Este repo es ese hueco cerrado en público, a escala de 75.000 estrellas, y durante sus primeros seis meses, por las tardes y los fines de semana.',
         },
       },
       community: {
@@ -255,11 +255,11 @@ export const aiAgentFleetContent = {
       items: [
         {
           q: '¿Qué es agentic maintenance?',
-          a: 'Agentic maintenance es la práctica de mantener sano un codebase vivo mediante una flota de agentes IA que hacen el trabajo mecánico — triage, testing, review briefs, mecánica de releases, métricas de comunidad — bajo dirección humana explícita. Tres propiedades lo separan de simplemente apuntar un agente de código a un repositorio. Primera, los gates: cada acción con consecuencias pasa un checkpoint bloqueante (tests en checkout limpio, análisis estático en vivo, aprobación humana donde la confianza es fina), y todo lo público se verifica antes de que ocurra. Segunda, la evidencia: los agentes nunca piden confianza; adjuntan output de tests, audit trails y veredictos adversariales, y un humano decide sobre el brief. Tercera, la memoria compuesta: cada fallo real se destila en una regla escrita que se carga en cada sesión futura, de modo que el sistema se vuelve más seguro a medida que envejece. En la implementación de referencia que describe este artículo, el agentic maintenance opera un repositorio open source de 73.000 estrellas, y durante sus primeros seis meses lo hizo con atención humana limitada a tardes y fines de semana.',
+          a: 'Agentic maintenance es la práctica de mantener sano un codebase vivo mediante una flota de agentes IA que hacen el trabajo mecánico — triage, testing, review briefs, mecánica de releases, métricas de comunidad — bajo dirección humana explícita. Tres propiedades lo separan de simplemente apuntar un agente de código a un repositorio. Primera, los gates: cada acción con consecuencias pasa un checkpoint bloqueante (tests en checkout limpio, análisis estático en vivo, aprobación humana donde la confianza es fina), y todo lo público se verifica antes de que ocurra. Segunda, la evidencia: los agentes nunca piden confianza; adjuntan output de tests, audit trails y veredictos adversariales, y un humano decide sobre el brief. Tercera, la memoria compuesta: cada fallo real se destila en una regla escrita que se carga en cada sesión futura, de modo que el sistema se vuelve más seguro a medida que envejece. En la implementación de referencia que describe este artículo, el agentic maintenance opera un repositorio open source de 75.000 estrellas, y durante sus primeros seis meses lo hizo con atención humana limitada a tardes y fines de semana.',
         },
         {
           q: '¿Pueden los agentes IA mantener un codebase por sí solos?',
-          a: 'No, y este sistema está diseñado sobre la premisa de que no deberían. Los agentes absorben el volumen: clasifican el flujo nocturno, corren suites de tests contra checkouts limpios, redactan review briefs, vigilan entregas de contribuidores, miden la salud de la comunidad. Cada acción con consecuencias pasa por gates, y todo lo estratégico (qué entra en el core, orden de merge, gobernanza, releases, juicios públicos) aterriza en un menú de decisiones humanas con la evidencia adjunta. Es división del trabajo: los agentes convierten un flujo ilimitado de trabajo mecánico en un conjunto acotado de decisiones. En mi caso, durante seis meses, ese límite fueron las tardes y los fines de semana para un repo con 73.063 estrellas en GitHub y 453 contribuidores. Quita al humano y lo que queda es autoridad sin revisar sobre el código de otras personas.',
+          a: 'No, y este sistema está diseñado sobre la premisa de que no deberían. Los agentes absorben el volumen: clasifican el flujo nocturno, corren suites de tests contra checkouts limpios, redactan review briefs, vigilan entregas de contribuidores, miden la salud de la comunidad. Cada acción con consecuencias pasa por gates, y todo lo estratégico (qué entra en el core, orden de merge, gobernanza, releases, juicios públicos) aterriza en un menú de decisiones humanas con la evidencia adjunta. Es división del trabajo: los agentes convierten un flujo ilimitado de trabajo mecánico en un conjunto acotado de decisiones. En mi caso, durante seis meses, ese límite fueron las tardes y los fines de semana para un repo con 75.297 estrellas en GitHub y 463 contribuidores. Quita al humano y lo que queda es autoridad sin revisar sobre el código de otras personas.',
         },
         {
           q: '¿Cuánto cuesta operar una flota de agentes IA así?',
@@ -289,7 +289,7 @@ export const aiAgentFleetContent = {
     altSlug: 'flota-agentes-ia',
     readingTime: '14 min read',
     seo: {
-      title: 'Agentic Maintenance: How I Run a 73,000-Star Repo with AI Agents',
+      title: 'Agentic Maintenance: How I Run a 75,000-Star Repo with AI Agents',
       description: 'A fleet of Claude Code agents maintains career-ops: triage, tests, review briefs and releases. The system, one documented day, and the playbook.',
     },
     nav: {
@@ -298,11 +298,11 @@ export const aiAgentFleetContent = {
     },
     header: {
       kicker: 'How it is operated · Open Source',
-      h1: 'Agentic maintenance: how I run a 73,000-star open source repo with a fleet of AI agents',
+      h1: 'Agentic maintenance: how I run a 75,000-star open source repo with a fleet of AI agents',
       subtitle: 'Agents do the mechanical work: triage, tests, review briefs, releases. The decisions are mine. This is the system, one fully documented day of it, and what it takes to run it on your own repo.',
       date: 'Jul 10, 2026',
     },
-    tldr: 'career-ops is my open source job-search system: 73,063 GitHub stars, 453 contributors and 1,330 merged PRs as of today. For six months I maintained it on evenings and weekends, around a full-time job. Since September I build it full time. A fleet of Claude Code agents does the mechanical work — triage, testing, review briefs, release mechanics, community metrics. Hard gates keep them honest, and every real failure gets distilled into a rule they load on boot.',
+    tldr: 'career-ops is my open source job-search system: 75,297 GitHub stars, 463 contributors and 2,406 merged PRs as of today. For six months I maintained it on evenings and weekends, around a full-time job. Since September I build it full time. A fleet of Claude Code agents does the mechanical work — triage, testing, review briefs, release mechanics, community metrics. Hard gates keep them honest, and every real failure gets distilled into a rule they load on boot.',
     tldrCoin: {
       pre: ' ',
       term: 'Agentic maintenance',
@@ -326,7 +326,7 @@ export const aiAgentFleetContent = {
       },
       fleet: {
         heading: 'The fleet',
-        intro: 'Each agent is a persistent Claude Code session in its own tmux window, with its own memory. They coordinate through file-based IPC: JSON request/response files in a shared directory, with polling. The coordination layer is files: a decoupled state machine where every message is a readable artifact and every decision leaves a trace you can replay. It scales to a 73,000-star repo and still debugs with cat.',
+        intro: 'Each agent is a persistent Claude Code session in its own tmux window, with its own memory. They coordinate through file-based IPC: JSON request/response files in a shared directory, with polling. The coordination layer is files: a decoupled state machine where every message is a readable artifact and every decision leaves a trace you can replay. It scales to a 75,000-star repo and still debugs with cat.',
         table: {
           headers: ['Agent', 'What it does'],
           rows: [
@@ -425,15 +425,15 @@ export const aiAgentFleetContent = {
           caption: 'Live career-ops telemetry — by',
           linkLabel: 'Warpchart',
         },
-        asOf: 'As of September 29, 2026:',
+        asOf: 'As of October 17, 2026:',
         table: {
           headers: ['Metric', 'Value'],
           rows: [
-            ['GitHub stars', '73,063'],
-            ['Forks', '13,727'],
-            ['Contributors', '453'],
-            ['Merged PRs', '1,330'],
-            ['Releases since the April launch', '34 (latest: v1.34.0, September 24)'],
+            ['GitHub stars', '75,297'],
+            ['Forks', '14,048'],
+            ['Contributors', '463'],
+            ['Merged PRs', '2,406'],
+            ['Releases since the April launch', '37 (latest: v1.37.0, October 16)'],
             ['Test suite', '5,624 assertions, 0 failing (Aug 2026)'],
             ['Discord members', '4,900'],
             ['Weekly traffic', '26,831 unique visitors · 8,680 unique cloners — 32% view→clone (Jul 2026)'],
@@ -445,7 +445,7 @@ export const aiAgentFleetContent = {
         dora: {
           pre: '',
           linkLabel: 'DORA\'s 2025 State of AI-assisted Software Development',
-          post: ' measured what most engineering teams now feel: AI lifts individual output (98% more merged PRs) while organizational delivery metrics stay flat. Their headline finding is that AI amplifies the system it lands in. The gap between those two numbers lives in everything this article describes: review, trust, memory, gates. This repo is that gap closed in public, at 73,000-star scale, and for its first six months, on evenings and weekends.',
+          post: ' measured what most engineering teams now feel: AI lifts individual output (98% more merged PRs) while organizational delivery metrics stay flat. Their headline finding is that AI amplifies the system it lands in. The gap between those two numbers lives in everything this article describes: review, trust, memory, gates. This repo is that gap closed in public, at 75,000-star scale, and for its first six months, on evenings and weekends.',
         },
       },
       community: {
@@ -538,11 +538,11 @@ export const aiAgentFleetContent = {
       items: [
         {
           q: 'What is agentic maintenance?',
-          a: 'Agentic maintenance is the practice of keeping a living codebase healthy through a fleet of AI agents that do the mechanical work — triage, testing, review briefs, release mechanics, community metrics — under explicit human direction. Three properties separate it from simply pointing a coding agent at a repository. First, gates: every consequential action passes a blocking checkpoint (clean-checkout tests, live static analysis, human approval where trust is thin), and anything public is verified before it happens. Second, evidence: agents never ask for trust; they attach test output, audit trails and adversarial verdicts, and a human decides on the brief. Third, compound memory: every real failure is distilled into a written rule that loads into every future session, so the system gets safer as it ages. In the reference implementation described in this article, agentic maintenance runs a 73,000-star open source repository, and for its first six months it did so on human attention limited to evenings and weekends.',
+          a: 'Agentic maintenance is the practice of keeping a living codebase healthy through a fleet of AI agents that do the mechanical work — triage, testing, review briefs, release mechanics, community metrics — under explicit human direction. Three properties separate it from simply pointing a coding agent at a repository. First, gates: every consequential action passes a blocking checkpoint (clean-checkout tests, live static analysis, human approval where trust is thin), and anything public is verified before it happens. Second, evidence: agents never ask for trust; they attach test output, audit trails and adversarial verdicts, and a human decides on the brief. Third, compound memory: every real failure is distilled into a written rule that loads into every future session, so the system gets safer as it ages. In the reference implementation described in this article, agentic maintenance runs a 75,000-star open source repository, and for its first six months it did so on human attention limited to evenings and weekends.',
         },
         {
           q: 'Can AI agents maintain a codebase by themselves?',
-          a: 'No, and this system is designed on the assumption that they shouldn\'t. The agents handle volume: classifying the overnight flow, running test suites against clean checkouts, drafting review briefs, watching for contributor deliveries, measuring community health. Every consequential action passes through gates, and anything strategic (what enters the core, merge order, governance, releases, public judgment calls) lands on a human decision menu with evidence attached. It\'s division of labor: agents convert an unbounded stream of mechanical work into a bounded set of decisions. In my case, for six months, that bound was evenings and weekends for a repo with 73,063 GitHub stars and 453 contributors. Remove the human and what\'s left is unreviewed authority over other people\'s code.',
+          a: 'No, and this system is designed on the assumption that they shouldn\'t. The agents handle volume: classifying the overnight flow, running test suites against clean checkouts, drafting review briefs, watching for contributor deliveries, measuring community health. Every consequential action passes through gates, and anything strategic (what enters the core, merge order, governance, releases, public judgment calls) lands on a human decision menu with evidence attached. It\'s division of labor: agents convert an unbounded stream of mechanical work into a bounded set of decisions. In my case, for six months, that bound was evenings and weekends for a repo with 75,297 GitHub stars and 463 contributors. Remove the human and what\'s left is unreviewed authority over other people\'s code.',
         },
         {
           q: 'How much does it cost to run an AI agent fleet like this?',
