@@ -72,6 +72,11 @@ const PERSON = {
   url: 'https://santifer.io',
   description: "Santiago Fernández de Valderrama Aparicio is a software engineer specializing in multi-agent AI systems and agentic adoption. He created career-ops, an open-source project maintained by an orchestrated fleet of AI agents, and coined 'agentic maintenance': gated, evidence-based upkeep of a living codebase, sustained by a fleet of AI agents under human direction.",
   jobTitle: 'Creator of career-ops',
+  // Los dos términos del manifiesto (search-ops, 23-oct): mismos @id que career-ops.org y Wikidata
+  knowsAbout: [
+    { '@type': 'DefinedTerm', '@id': 'https://career-ops.org/manifesto/#ai-job-search', name: 'AI job search', sameAs: 'https://www.wikidata.org/wiki/Q141819411' },
+    { '@type': 'DefinedTerm', '@id': 'https://career-ops.org/manifesto/#careerops', name: 'CareerOps', url: 'https://career-ops.org/manifesto' },
+  ],
   sameAs: [
     'https://www.linkedin.com/in/santifer',
     'https://github.com/santifer',
