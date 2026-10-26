@@ -58,6 +58,13 @@ function htmlFile(path: string): string {
 const DROP_TAGS = new Set(['nav', 'footer', 'button', 'svg', 'canvas', 'script', 'style', 'noscript', 'iframe', 'form', 'input', 'video', 'audio', 'picture'])
 const BLOCK_TAGS = new Set(['div', 'section', 'article', 'main', 'aside', 'header', 'p', 'figure', 'figcaption', 'dl', 'dt', 'dd'])
 
+const SOCIAL_POST: [RegExp, string][] = [
+  [/^https:\/\/(www\.)?reddit\.com\/r\/[^/]+\/comments\//, 'Reddit post'],
+  [/^https:\/\/(x|twitter)\.com\/[^/]+\/status\//, 'X post'],
+  [/^https:\/\/(www\.)?linkedin\.com\/(posts|feed\/update|pulse)\//, 'LinkedIn post'],
+  [/^https:\/\/dev\.to\/[^/]+\/[^/]+/, 'dev.to post'],
+]
+
 function isEl(n: ChildNode): n is Element {
   return n.type === 'tag' || n.type === 'script' || n.type === 'style'
 }
@@ -108,6 +115,11 @@ function inlineNode(n: ChildNode, ctx: Ctx): string {
       const t = n.children.map((c) => inlineNode(c, ctx).trim()).filter(Boolean).join(' ').replace(/\s+/g, ' ')
       const href = n.attribs.href
       if (!t) return ''
+      // Tarjeta de un post de terceros: en HTML se ve como cita ajena, pero en el .md su titular
+      // pasaría por texto de santifer.io (F2 de search-ops, 26-oct: «740+ offers», «516 evaluations,
+      // 66 applications»). Queda el enlace con el nombre de la red, sin el titular.
+      const social = href && SOCIAL_POST.find(([re]) => re.test(href))
+      if (social) return ` [${social[1]}](${href}) `
       if (!href || href.startsWith('javascript:')) return t
       const url = href.startsWith('mailto:') ? href : absolute(href, ctx.pageUrl)
       return t === url ? url : ` [${t}](${url}) `
