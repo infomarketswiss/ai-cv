@@ -200,6 +200,8 @@ const aboutPersonProfile = {
     // Misma cadena que el Person de la home y de los artículos, GitHub, Wikidata y career-ops.org (canon 29-sep)
     jobTitle: 'Creator of career-ops',
     knowsAbout: [
+      { '@type': 'DefinedTerm', '@id': 'https://career-ops.org/manifesto/#ai-job-search', name: 'AI job search', sameAs: 'https://www.wikidata.org/wiki/Q141819411' },
+      { '@type': 'DefinedTerm', '@id': 'https://career-ops.org/manifesto/#careerops', name: 'CareerOps', url: 'https://career-ops.org/manifesto' },
       { '@type': 'Thing', name: 'Artificial Intelligence', url: 'https://en.wikipedia.org/wiki/Artificial_intelligence' },
       { '@type': 'Thing', name: 'Machine Learning', url: 'https://en.wikipedia.org/wiki/Machine_learning' },
       { '@type': 'Thing', name: 'Multi-Agent System', url: 'https://en.wikipedia.org/wiki/Multi-agent_system' },
